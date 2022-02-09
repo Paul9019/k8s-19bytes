@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # annotations:
+  #   kubernetes.io/ingress.class: "nginx"
+  #   nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-19bytes
+spec:
+  # tls:
+  #   - hosts:
+  #     - secretName: <use-secret>
+  rules:
+  - host:
+    http:
+      paths:
+      - backend:
+          service:
+            name: service-19bytes
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
